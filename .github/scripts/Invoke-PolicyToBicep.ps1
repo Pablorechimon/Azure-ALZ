@@ -227,37 +227,37 @@ function New-PolicySetDefinitionsBicepInputTxtFile {
 #endregion
 
 #region Policy Asssignments
-function New-PolicyAssignmentsBicepInputTxtFile {
-  [CmdletBinding(SupportsShouldProcess)]
-  param()
+# function New-PolicyAssignmentsBicepInputTxtFile {
+#   [CmdletBinding(SupportsShouldProcess)]
+#   param()
 
-  Write-Information "====> Creating/Emptying '$assignmentsTxtFileName'" -InformationAction Continue
-  Set-Content -Path "$rootPath/$assignmentsLongPath/$assignmentsTxtFileName" -Value $null -Encoding "utf8"
+#   Write-Information "====> Creating/Emptying '$assignmentsTxtFileName'" -InformationAction Continue
+#   Set-Content -Path "$rootPath/$assignmentsLongPath/$assignmentsTxtFileName" -Value $null -Encoding "utf8"
 
-  Write-Information "====> Looping Through Policy Assignments:" -InformationAction Continue
-  Get-ChildItem -Recurse -Path "$rootPath/$assignmentsLongPath" -Filter "*.json" | ForEach-Object {
-    $policyAssignment = Get-Content $_.FullName | ConvertFrom-Json -Depth 100
+#   Write-Information "====> Looping Through Policy Assignments:" -InformationAction Continue
+#   Get-ChildItem -Recurse -Path "$rootPath/$assignmentsLongPath" -Filter "*.json" | ForEach-Object {
+#     $policyAssignment = Get-Content $_.FullName | ConvertFrom-Json -Depth 100
 
-    $policyAssignmentName = $policyAssignment.name
-    $policyAssignmentDefinitionID = $policyAssignment.properties.policyDefinitionId
-    $fileName = $_.Name
+#     $policyAssignmentName = $policyAssignment.name
+#     $policyAssignmentDefinitionID = $policyAssignment.properties.policyDefinitionId
+#     $fileName = $_.Name
 
-    # Remove hyphens from Policy Assignment Name
-    $policyAssignmentNameNoHyphens = $policyAssignmentName.replace("-", "")
+#     # Remove hyphens from Policy Assignment Name
+#     $policyAssignmentNameNoHyphens = $policyAssignmentName.replace("-", "")
 
-    Write-Information "==> Adding '$policyAssignmentName' to '$PWD/$assignmentsTxtFileName'" -InformationAction Continue
-    Add-Content -Path "$rootPath/$assignmentsLongPath/$assignmentsTxtFileName" -Encoding "utf8" -Value "var varPolicyAssignment$policyAssignmentNameNoHyphens = {`r`n`tdefinitionId: '$policyAssignmentDefinitionID'`r`n`tlibDefinition: loadJsonContent('../../../policy/$assignmentsLongPath/$fileName')`r`n}`r`n"
-  }
+#     Write-Information "==> Adding '$policyAssignmentName' to '$PWD/$assignmentsTxtFileName'" -InformationAction Continue
+#     Add-Content -Path "$rootPath/$assignmentsLongPath/$assignmentsTxtFileName" -Encoding "utf8" -Value "var varPolicyAssignment$policyAssignmentNameNoHyphens = {`r`n`tdefinitionId: '$policyAssignmentDefinitionID'`r`n`tlibDefinition: loadJsonContent('../../../policy/$assignmentsLongPath/$fileName')`r`n}`r`n"
+#   }
 
-  Write-Information "====> Running '$assignmentsTxtFileName' through Line Endings" -InformationAction Continue
-  Update-FileLineEndingType -filePath "$rootPath/$assignmentsLongPath/$assignmentsTxtFileName"
+#   Write-Information "====> Running '$assignmentsTxtFileName' through Line Endings" -InformationAction Continue
+#   Update-FileLineEndingType -filePath "$rootPath/$assignmentsLongPath/$assignmentsTxtFileName"
 
-  $policyAssignmentCount = Get-ChildItem -Recurse -Path "$rootPath/$assignmentsLongPath" -Filter "*.json" | Measure-Object
-  $policyAssignmentCountString = $policyAssignmentCount.Count
-  Write-Information "====> Policy Assignments Total: $policyAssignmentCountString" -InformationAction Continue
-}
+#   $policyAssignmentCount = Get-ChildItem -Recurse -Path "$rootPath/$assignmentsLongPath" -Filter "*.json" | Measure-Object
+#   $policyAssignmentCountString = $policyAssignmentCount.Count
+#   Write-Information "====> Policy Assignments Total: $policyAssignmentCountString" -InformationAction Continue
+# }
 #endregion
 
 New-PolicyDefinitionsBicepInputTxtFile
 New-PolicySetDefinitionsBicepInputTxtFile
-New-PolicyAssignmentsBicepInputTxtFile
+# New-PolicyAssignmentsBicepInputTxtFile
