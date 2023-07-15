@@ -63,46 +63,46 @@
             env:
               GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
     
-          # - name: Update Policy Library
-          #   uses: azure/powershell@v1
-          #   with:
-          #     inlineScript: |
-          #       Write-Information "==> Running script..." -InformationAction Continue
-          #       ${{ github.repository }}/.github/scripts/Invoke-LibraryUpdate.ps1 `
-          #         -AlzToolsPath "${{ github.workspace }}/${{ env.remote_repository }}/src/Alz.Tools/" `
-          #         -TargetPath ${{ github.workspace }}/${{ github.repository }} `
-          #         -SourcePath ${{ github.workspace }}/${{ env.remote_repository }} `
-          #         -Reset
-          #     azPSVersion: "latest"
+          - name: Update Policy Library
+            uses: azure/powershell@v1
+            with:
+              inlineScript: |
+                Write-Information "==> Running script..." -InformationAction Continue
+                ${{ github.repository }}/.github/scripts/Invoke-LibraryUpdate.ps1 `
+                  -AlzToolsPath "${{ github.workspace }}/${{ env.remote_repository }}/src/Alz.Tools/" `
+                  -TargetPath ${{ github.workspace }}/${{ github.repository }} `
+                  -SourcePath ${{ github.workspace }}/${{ env.remote_repository }} `
+                  -Reset
+              azPSVersion: "latest"
     
-          # - name: Update Policy Definition Bicep Input Files
-          #   uses: azure/powershell@v1
-          #   with:
-          #     inlineScript: |
-          #       cd ${{ github.workspace }}/${{ github.repository }}
-          #       Write-Information "==> Running script..." -InformationAction Continue
-          #       .github/scripts/Invoke-PolicyToBicep.ps1 `
-          #         -alzToolsPath "${{ github.workspace }}/${{ env.remote_repository }}/src/Alz.Tools/"
-          #     azPSVersion: "latest"
+          - name: Update Policy Definition Bicep Input Files
+            uses: azure/powershell@v1
+            with:
+              inlineScript: |
+                cd ${{ github.workspace }}/${{ github.repository }}
+                Write-Information "==> Running script..." -InformationAction Continue
+                .github/scripts/Invoke-PolicyToBicep.ps1 `
+                  -alzToolsPath "${{ github.workspace }}/${{ env.remote_repository }}/src/Alz.Tools/"
+              azPSVersion: "latest"
     
-          # - name: Check for changes
-          #   id: git_status
-          #   run: |
-          #     CHECK_GIT_STATUS=($(git status -s))
-          #     git status -s
-          #     echo "changes=${#CHECK_GIT_STATUS[@]}" >> $GITHUB_OUTPUT
-          #   working-directory: ${{ github.repository }}
+          - name: Check for changes
+            id: git_status
+            run: |
+              CHECK_GIT_STATUS=($(git status -s))
+              git status -s
+              echo "changes=${#CHECK_GIT_STATUS[@]}" >> $GITHUB_OUTPUT
+            working-directory: ${{ github.repository }}
     
-          # - name: Add files, commit and push
-          #   if: steps.git_status.outputs.changes > 0
-          #   run: |
-          #     echo "Pushing changes to origin..."
-          #     git add infra-as-code/bicep/modules/policy/definitions/lib
-          #     git add infra-as-code/bicep/modules/policy/assignments/lib
-          #     git config --global core.autocrlf input
-          #     git commit -m '${{ env.pr_title }}'
-          #     git push origin ${{ env.branch_name }}
-          #   working-directory: ${{ github.repository }}
+          - name: Add files, commit and push
+            if: steps.git_status.outputs.changes > 0
+            run: |
+              echo "Pushing changes to origin..."
+              git add infra-as-code/bicep/modules/policy/definitions/lib
+              git add infra-as-code/bicep/modules/policy/assignments/lib
+              git config --global core.autocrlf input
+              git commit -m '${{ env.pr_title }}'
+              git push origin ${{ env.branch_name }}
+            working-directory: ${{ github.repository }}
     
           # - name: Create pull request
           #   if: steps.git_status.outputs.changes > 0
