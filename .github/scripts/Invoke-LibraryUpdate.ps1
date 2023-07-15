@@ -22,7 +22,7 @@
 [CmdletBinding(SupportsShouldProcess)]
 param (
     [Parameter()][String]$AlzToolsPath = "$PWD/enterprise-scale/src/Alz.Tools",
-    [Parameter()][String]$TargetPath = "$PWD/ALZ-Bicep",
+    [Parameter()][String]$TargetPath = "$PWD/Pablorechimon/Azure-ALZ",
     [Parameter()][String]$SourcePath = "$PWD/enterprise-scale",
     [Parameter()][String]$LineEnding = "unix",
     [Parameter()][Switch]$Reset,
