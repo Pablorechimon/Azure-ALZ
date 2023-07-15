@@ -99,7 +99,6 @@
             if: steps.git_status.outputs.changes > 0
             run: |
               echo "Pushing changes to origin..."
-              git pull
               git add infra-as-code/bicep/modules/policy/definitions/lib
               git add infra-as-code/bicep/modules/policy/assignments/lib
               git config --global core.autocrlf input
