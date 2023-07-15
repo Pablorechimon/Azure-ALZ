@@ -23,6 +23,7 @@ var varCustomPolicySetDefinitionsArray = []
 // Policy Set/Initiative Definition Parameter Variables
 
 // var varPolicySetDefinitionEsAuditUnusedResourcesCostOptimizationParameters = loadJsonContent('')
+
 // Customer Usage Attribution Id
 var varCuaid = '2b136786-9881-412e-84ba-f4c2822e1ac9'
 
