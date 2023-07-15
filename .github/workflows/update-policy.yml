@@ -57,9 +57,11 @@
               then
                 echo "Checkout local branch (create new, no origin)..."
                 git checkout -b ${{ env.branch_name }}
+                git pull
               else
                 echo "Checkout local branch (create new, track from origin)..."
                 git checkout -b ${{ env.branch_name }} --track origin/${{ env.branch_name }}
+                git pull
               fi
             working-directory: ${{ github.repository }}
             env:
