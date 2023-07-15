@@ -1,0 +1,7 @@
+var varCustomPolicySetDefinitionsArray = [
+	{
+		name: 'Audit-UnusedResourcesCostOptimization'
+		libSetDefinition: loadJsonContent('lib/policy_set_definitions/policy_set_definition_es_Audit-UnusedResourcesCostOptimization.json')
+		libSetChildDefinitions: [
+		]
+	}
