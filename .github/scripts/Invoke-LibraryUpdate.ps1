@@ -28,7 +28,7 @@ param (
     [Parameter()][Switch]$Reset,
     [Parameter()][Switch]$UpdateProviderApiVersions
 )
-
+Write-Host "PWD es igual a: " + $PWD
 $ErrorActionPreference = "Stop"
 
 # This script relies on a custom set of classes and functions
