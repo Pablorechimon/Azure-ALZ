@@ -57,11 +57,9 @@
               then
                 echo "Checkout local branch (create new, no origin)..."
                 git checkout -b ${{ env.branch_name }}
-                git pull
               else
                 echo "Checkout local branch (create new, track from origin)..."
                 git checkout -b ${{ env.branch_name }} --track origin/${{ env.branch_name }}
-                git pull
               fi
             working-directory: ${{ github.repository }}
             env:
@@ -101,6 +99,7 @@
             if: steps.git_status.outputs.changes > 0
             run: |
               echo "Pushing changes to origin..."
+              git pull
               git add infra-as-code/bicep/modules/policy/definitions/lib
               git add infra-as-code/bicep/modules/policy/assignments/lib
               git config --global core.autocrlf input
