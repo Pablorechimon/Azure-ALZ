@@ -78,7 +78,7 @@
             inlineScript: |
               Write-Information "==> Running script..." -InformationAction Continue
               ${{ github.repository }}/.github/scripts/Invoke-LibraryUpdate.ps1 `
-                -AlzToolsPath "${{ github.workspace }}/${{ env.remote_repository }}/src/Alz.Tools/" `
+                -AlzToolsPath "${{ github.workspace }}/${{ env.remote_tools_repository }}/src/Alz.Tools/" `
                 -TargetPath ${{ github.workspace }}/${{ github.repository }} `
                 -SourcePath ${{ github.workspace }}/${{ env.remote_repository }} `
                 -Reset
@@ -91,7 +91,7 @@
               cd ${{ github.workspace }}/${{ github.repository }}
               Write-Information "==> Running script..." -InformationAction Continue
               .github/scripts/Invoke-PolicyToBicep.ps1 `
-                -alzToolsPath "${{ github.workspace }}/${{ env.remote_repository }}/src/Alz.Tools/"
+                -alzToolsPath "${{ github.workspace }}/${{ env.remote_tools_repository }}/src/Alz.Tools/"
             azPSVersion: "latest"
   
         - name: Check for changes
