@@ -61,7 +61,8 @@ $policyDefinitionFilePaths = (
     Get-ChildItem -Path "$SourcePath/Definitions/*" `
         -File `
         -Include "*.json" `
-        # -Exclude "Noting to Exclude right now"
+        -Exclude "NOLOGS*"
+        # -Exclude "*.AzureChinaCloud.json", "*.AzureUSGovernment.json"
 ).FullName
 $policySetDefinitionFilePaths = (
     Get-ChildItem -Path "$SourcePath/Initiatives/*" `
