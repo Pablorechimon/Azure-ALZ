@@ -7,7 +7,7 @@
       workflow_dispatch: {}
     
     env:
-      remote_repository: "Azure/Enterprise-Scale"
+      remote_repository: "Pablorechimon/Azure-Policy"
       branch_name: "patch-policy-library"
       az_accounts_minimum_version: "2.2.3"
       pr_title: "Update Policy Library (automated)"
