@@ -1,0 +1,4 @@
+{
+	name: 'Deny-Storage-SFTP'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deny-Storage-SFTP.json')
+}

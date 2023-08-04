@@ -23,12 +23,11 @@
 param (
     [Parameter()][String]$AlzToolsPath = "$PWD/enterprise-scale/src/Alz.Tools",
     [Parameter()][String]$TargetPath = "$PWD/Pablorechimon/Azure-ALZ",
-    [Parameter()][String]$SourcePath = "$PWD/enterprise-scale",
+    [Parameter()][String]$SourcePath = "$PWD/Pablorechimon/Azure-Policy",
     [Parameter()][String]$LineEnding = "unix",
     [Parameter()][Switch]$Reset,
     [Parameter()][Switch]$UpdateProviderApiVersions
 )
-Write-Host "PWD es igual a: " + $PWD
 $ErrorActionPreference = "Stop"
 
 # This script relies on a custom set of classes and functions
@@ -59,16 +58,16 @@ $defaultConfig = @{
 # File locations from Enterprise-scale repository for
 # resources, organised by type
 $policyDefinitionFilePaths = (
-    Get-ChildItem -Path "$SourcePath/src/resources/Microsoft.Authorization/policyDefinitions/*" `
+    Get-ChildItem -Path "$SourcePath/Definitions/*" `
         -File `
         -Include "*.json" `
-        -Exclude "*.AzureChinaCloud.json", "*.AzureUSGovernment.json"
+        # -Exclude "Noting to Exclude right now"
 ).FullName
 $policySetDefinitionFilePaths = (
-    Get-ChildItem -Path "$SourcePath/src/resources/Microsoft.Authorization/policySetDefinitions/*" `
+    Get-ChildItem -Path "$SourcePath/Initiatives/*" `
         -File `
         -Include "*.json" `
-        -Exclude "*.AzureChinaCloud.json", "*.AzureUSGovernment.json"
+        # -Exclude "Noting to Exclude right now"
 ).FullName
 
 # The exportConfig array controls the foreach loop used to run
