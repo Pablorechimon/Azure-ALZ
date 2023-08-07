@@ -1,0 +1,15 @@
+{
+  "DeployDiagnosticSettingsToLogAnalyticsWorkspace": {
+    "parameters": {
+      "logAnalytics": {
+        "value": "[[parameters('logAnalytics')]"
+      },
+      "effect": {
+        "value": "[[parameters('effect')]"
+      },
+      "profileName": {
+        "value": "[[parameters('profileName')]"
+      }
+    }
+  }
+}

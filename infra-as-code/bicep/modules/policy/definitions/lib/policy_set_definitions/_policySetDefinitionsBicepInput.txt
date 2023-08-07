@@ -1,7 +1,20 @@
 var varCustomPolicySetDefinitionsArray = [
 	{
-		name: 'Audit-UnusedResourcesCostOptimization'
-		libSetDefinition: loadJsonContent('lib/policy_set_definitions/policy_set_definition_es_Audit-UnusedResourcesCostOptimization.json')
+		name: 'Deploy-Diagnostic-Settings-To-Sentinel'
+		libSetDefinition: loadJsonContent('lib/policy_set_definitions/policy_set_definition_es_Deploy-Diagnostic-Settings-To-Sentinel.json')
 		libSetChildDefinitions: [
+			{
+				definitionReferenceId: 'DeployDiagnosticSettingsToLogAnalyticsWorkspace'
+				definitionId: '${varTargetManagementGroupResourceId}/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-Analysis'
+				definitionParameters: varPolicySetDefinitionEsDeployDiagnosticSettingsToSentinelParameters.DeployDiagnosticSettingsToLogAnalyticsWorkspace.parameters
+				definitionGroups: []
+			}
 		]
 	}
+]
+
+
+// Policy Set/Initiative Definition Parameter Variables
+
+var varPolicySetDefinitionEsDeployDiagnosticSettingsToSentinelParameters = loadJsonContent('lib/policy_set_definitions/policy_set_definition_es_Deploy-Diagnostic-Settings-To-Sentinel.parameters.json')
+

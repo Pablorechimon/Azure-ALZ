@@ -1,4 +1,156 @@
 {
-	name: 'Deny-Storage-SFTP'
-	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deny-Storage-SFTP.json')
+	name: 'Deploy-Diagnostics-Analysis Service'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Analysis Service.json')
+}
+{
+	name: 'Deploy-Diagnostics-APIManagement'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-APIManagement.json')
+}
+{
+	name: 'Deploy-Diagnostics-APP-Configuration'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-APP-Configuration.json')
+}
+{
+	name: 'Deploy-Diagnostics-APP-Insights'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-APP-Insights.json')
+}
+{
+	name: 'Deploy-Diagnostics-APP-VNetGW'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-APP-VNetGW.json')
+}
+{
+	name: 'Deploy-Diagnostics-Automation-Accounts'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Automation-Accounts.json')
+}
+{
+	name: 'Deploy-Diagnostics-Cache-For-Redis'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Cache-For-Redis.json')
+}
+{
+	name: 'Deploy-Diagnostics-CDNEndpoints'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-CDNEndpoints.json')
+}
+{
+	name: 'Deploy-Diagnostics-CognitiveServices'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-CognitiveServices.json')
+}
+{
+	name: 'Deploy-Diagnostics-Communication-Services'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Communication-Services.json')
+}
+{
+	name: 'Deploy-Diagnostics-Container Registry'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Container Registry.json')
+}
+{
+	name: 'Deploy-Diagnostics-CosmosDB'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-CosmosDB.json')
+}
+{
+	name: 'Deploy-Diagnostics-Databricks'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Databricks.json')
+}
+{
+	name: 'Deploy-Diagnostics-DataFactory'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-DataFactory.json')
+}
+{
+	name: 'Deploy-Diagnostics-DevCenter'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-DevCenter.json')
+}
+{
+	name: 'Deploy-Diagnostics-DocumentDB'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-DocumentDB.json')
+}
+{
+	name: 'Deploy-Diagnostics-EventGridSystemTopic'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-EventGridSystemTopic.json')
+}
+{
+	name: 'Deploy-Diagnostics-EventGridTopic'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-EventGridTopic.json')
+}
+{
+	name: 'Deploy-Diagnostics-EventHub-Namespaces'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-EventHub-Namespaces.json')
+}
+{
+	name: 'Deploy-Diagnostics-ExpressRoute'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-ExpressRoute.json')
+}
+{
+	name: 'Deploy-Diagnostics-Function'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Function.json')
+}
+{
+	name: 'Deploy-Diagnostics-Grafana'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Grafana.json')
+}
+{
+	name: 'Deploy-Diagnostics-Key-Vault'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Key-Vault.json')
+}
+{
+	name: 'Deploy-Diagnostics-Kubernetes'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Kubernetes.json')
+}
+{
+	name: 'Deploy-Diagnostics-Load-Testing'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Load-Testing.json')
+}
+{
+	name: 'Deploy-Diagnostics-LoadBalancer'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-LoadBalancer.json')
+}
+{
+	name: 'Deploy-Diagnostics-LogAnalytics'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-LogAnalytics.json')
+}
+{
+	name: 'Deploy-Diagnostics-Logic-Apps'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Logic-Apps.json')
+}
+{
+	name: 'Deploy-Diagnostics-LogicAppsISE'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-LogicAppsISE.json')
+}
+{
+	name: 'Deploy-Diagnostics-MlWorkspace'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-MlWorkspace.json')
+}
+{
+	name: 'Deploy-Diagnostics-MySQL'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-MySQL.json')
+}
+{
+	name: 'Deploy-Diagnostics-NetworkSecurityGroups'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-NetworkSecurityGroups.json')
+}
+{
+	name: 'Deploy-Diagnostics-Public-IP-Addresses'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Public-IP-Addresses.json')
+}
+{
+	name: 'Deploy-Diagnostics-Redis-Enterprise'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Redis-Enterprise.json')
+}
+{
+	name: 'Deploy-Diagnostics-Storage-Account-Blob-Service'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Storage-Account-Blob-Service.json')
+}
+{
+	name: 'Deploy-Diagnostics-Storage-Account-File-Service'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Storage-Account-File-Service.json')
+}
+{
+	name: 'Deploy-Diagnostics-Storage-Account-Queue-Service'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Storage-Account-Queue-Service.json')
+}
+{
+	name: 'Deploy-Diagnostics-Storage-Account-Table-Service'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-Storage-Account-Table-Service.json')
+}
+{
+	name: 'Deploy-Diagnostics-VirtualNetwork'
+	libDefinition: loadJsonContent('lib/policy_definitions/policy_definition_es_Deploy-Diagnostics-VirtualNetwork.json')
 }
